@@ -1,4 +1,5 @@
-<section class="phx-hero">
+<section style="text-align: center; padding-top: 100px">
+  <img src="<%= Routes.static_path(@conn, "/images/logo_v0.1.png") %>" alt="Logo de Diccionario Callejero"/>
   <h1>&iexcl;Pronto estaremos en línea!</h1>
   <p>Síguenos en <a href="https://www.facebook.com/DiccionarioCallejero">Facebook</a></p>
 </section>
