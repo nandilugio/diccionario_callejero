@@ -1,0 +1,19 @@
+name: Gigalixir CD
+on:
+  workflow_run:
+    workflows: ["Elixir CI"]
+    types: [completed]
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: sudo pip install gigalixir
+      - run: echo "${{ secrets.GIGALIXIR_NETRC }}" > ~/.netrc
+      - run: gigalixir git:remote "${{ secrets.GIGALIXIR_APP }}"
+      - run: git push -f gigalixir HEAD:refs/heads/master
+
