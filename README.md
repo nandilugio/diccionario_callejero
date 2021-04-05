@@ -1,19 +1,32 @@
-# DC
+![Diccionario Callejero](assets/static/images/logo_v0.1.png)
 
-To start your Phoenix server:
+A dictionary of hispanic slang terms from all around the world.
 
-  * Install dependencies with `mix deps.get`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+_¡Échale un ojo!_ / _check it out!_ at [diccionariocallejero.com](https://www.diccionariocallejero.com/)
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Development
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+### Prerequisites
 
-## Learn more
+- Node (check required version at [`phoenix_static_buildpack.config`](phoenix_static_buildpack.config))
+- Elixir (check required version at [`elixir_buildpack.config`](elixir_buildpack.config))
+- Erlang/OTP (check required version at [`elixir_buildpack.config`](elixir_buildpack.config))
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+### Dev tasks
+
+This is a Mix/Phoenix app, and all the regular apply:
+```bash
+# kiex use 1.11
+# nvm use 'lts/*'
+mix deps.get
+mix pxh.server
+# lynx "http://localhost:4000"
+mix format
+mix test
+# etc.
+```
+
+### CI/CD
+
+CI (build, code format check and tests) are run for every PR. Deployment is handled by another workflow after a succesful CI build over `master`. See the workflows [here](.github/workflows/).
+
