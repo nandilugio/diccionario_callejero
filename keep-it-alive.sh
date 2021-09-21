@@ -2,5 +2,5 @@
 
 date >> keepalive.txt
 git commit keepalive.txt -m "gigalixir keepalive"
-echo "Remember to push!"
+echo "Remember to git push gigalixir master!"
 
